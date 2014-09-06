@@ -1,0 +1,66 @@
+ry memory allocator
+       - OS v.s. application memory allocation
+       - mmaping /dev/zero (not possible in Macs) 
+       - slab allocation (memory->caches->slabs)
+       
+
+
+Memory mapping
+       - basic operation and example
+       - mmap(NULL, PAGE_SIZE, PROT_READ | PROT_WRITE, MAP_PRIVATE, fd, 0); 
+       - bitmaps contd. (find_zero_bit)
+
+Rudimentary memory allocator
+       - OS v.s. application memory allocation
+       - mmaping /dev/zero (not possible in Macs) 
+       - slab allocation (memory->caches->slabs)
+       
+
+
+Memory mapping
+       - basic operation and example
+       - mmap(NULL, PAGE_SIZE, PROT_READ | PROT_WRITE, MAP_PRIVATE, fd, 0); 
+       - bitmaps contd. (find_zero_bit)
+
+Rudimentary memory allocator
+       - OS v.s. application memory allocation
+       - mmaping /dev/zero (not possible in Macs) 
+       - slab allocation (memory->caches->slabs)
+       
+
+
+Memory mapping
+       - basic operation and example
+       - mmap(NULL, PAGE_SIZE, PROT_READ | PROT_WRITE, MAP_PRIVATE, fd, 0); 
+       - bitmaps contd. (find_zero_bit)
+
+Rudimentary memory allocator
+       - OS v.s. application memory allocation
+       - mmaping /dev/zero (not possible in Macs) 
+       - slab allocation (memory->caches->slabs)
+       
+
+
+Memory mapping
+       - basic operation and example
+       - mmap(NULL, PAGE_SIZE, PROT_READ | PROT_WRITE, MAP_PRIVATE, fd, 0); 
+       - bitmaps contd. (find_zero_bit)
+
+Rudimentary memory allocator
+       - OS v.s. application memory allocation
+       - mmaping /dev/zero (not possible in Macs) 
+       - slab allocation (memory->caches->slabs)
+       
+
+
+Memory mapping
+       - basic operation and example
+       - mmap(NULL, PAGE_SIZE, PROT_READ | PROT_WRITE, MAP_PRIVATE, fd, 0); 
+       - bitmaps contd. (find_zero_bit)
+
+Rudimentary memory allocator
+       - OS v.s. application memory allocation
+       - mmaping /dev/zero (not possible in Macs) 
+       - slab allocation (memory->caches->slabs)
+       
+

@@ -1,0 +1,18 @@
+TARGET= mapping
+CC= gcc
+
+OBJS= $(OBJS1) $(OBJS2)
+
+all: $(TARGET)
+
+main:
+	gcc -c -fpic myprint.c
+	gcc -shared -o libmyprint.so myprint.o
+	gcc -o main main.c -lmyprint -L. 
+
+
+%: %.c
+	$(CC) -o $@ $^ -g
+
+clean:
+	rm  $(TARGET)

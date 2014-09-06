@@ -1,0 +1,18 @@
+TARGET= strings accessing-strings
+CC= gcc
+OBJS1= strings.o reverse.o 
+OBJS2= accessing-strings.o
+
+all: $(TARGET)
+
+%.o: %.c
+	$(CC) -c $^
+
+strings: $(OBJS1)
+	$(CC) -o $@ $^
+
+accessing-strings: $(OBJS2)
+	$(CC) -o $@ $^
+
+clean:
+	rm $(TARGET)

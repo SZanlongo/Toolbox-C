@@ -1,0 +1,20 @@
+Design and Implementation:
+
+- Our main file has 3 input checks.  First it verifies that there are exactly 3 parameters provided.  Then it checks that the parameters are numbers and makes sure the user provides values greater than 0 for both the "number of reporters" and the "room size".  
+- The main also creates a speaker thread and a reporter thread for the number of reporters provided by the user.
+- The speaker thread/method is invoked first in the main followed by the the reporters.  
+- The speaker enters a while loop which continues to run as long as there are reporters to be reserved.
+- The speaker enters a wait condition until it receives a signal from the reporter.  It may also choose to skip that wait condition if there are questions to be answered in queue.
+- The reporter threads are sent to the Reporter() function, at which time it checks if the no. of reporters in the room equals the size of the room.  If so, it enters a wait condition and awaits a signal that is later sent from the LeaveConfRoom() function.  Otherwise, it skips the wait cond. and continues to EnterConfRoom.  
+- EnterConfRoom performs a lock operation which freely allows that reporter to increment the count of reporters in the room (followed by an unlock) without fear of other threads accessing the same variable at the same time.
+- This is followed by the a forloop that represents the number of question the reporter is to ask.  
+- Next the Reporter function performs another lock, followed by the QuestionStart/QuestionDone functions.  This lock allows the reporter to ask his/her question, receive an answer and end their question without interruption.
+- Just after unlocking, its set to sleep a very short period of time which allows other reporters waiting their turn, the ability to ask a question before this initial reporter asks their next question.
+- When the reporter asks a question, it performs a lock, sets the a variable to 1 letting the speaker know there's a question in queue and signals to the speaker to answer the question.
+- The speaker either sees there is a question waiting to be answered or, if they're asleep, they wake up and invoke the AnswerStart()/AnswerDone() functions.
+- After the AnswerDone() function is complete, the speaker signals back to the reporter who is waiting in the QuestionDone() function, receives that signal and prints the message that function prints out.
+- LeaveConfRoom performs a lock, allowing the reporter to decrement the count of users to be served and reporters in the room.  When the unlock is performed, it signals to the next person in queue to enter the room, letting them know they can come in.
+
+
+
+	

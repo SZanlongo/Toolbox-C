@@ -1,0 +1,15 @@
+TARGET=sleep
+CC=gcc
+
+OBJS = timing.o sleep.o
+
+all: $(TARGET)
+
+%.o: %.c
+	$(CC) -c $^
+
+%: $(OBJS)
+	$(CC) -o $@ $^ -g
+
+clean:
+	rm  *.o $(TARGET)

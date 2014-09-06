@@ -1,0 +1,24 @@
+TARGET=  sync-threads
+CC= gcc
+
+OBJS= memory.o bits.o
+
+all: $(TARGET)
+
+memory: $(OBJS)
+	gcc -o $@ $(OBJS)
+
+%.o: %.c
+	$(CC) -c $^
+
+main:
+	gcc -c -fpic myprint.c
+	gcc -shared -o libmyprint.so myprint.o
+	gcc -o main main.c -lmyprint -L. 
+
+
+%: %.c
+	$(CC) -o $@ $^ -g
+
+clean:
+	rm  *.o $(TARGET)

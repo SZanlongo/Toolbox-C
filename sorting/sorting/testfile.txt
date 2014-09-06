@@ -1,0 +1,9 @@
+UNSORTED STRINGS
+0: this is line 3.
+1: line 2.
+2: i am line 1.
+
+SORTED STRINGS
+0: line 2.
+1: i am line 1.
+2: this is line 3.

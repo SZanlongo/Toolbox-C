@@ -1,0 +1,12 @@
+TARGET= gnu-single-hash gnu-single-hash-timing
+CC= gcc
+
+OBJS= $(OBJS1) $(OBJS2)
+
+all: $(TARGET)
+
+%: %.c
+	$(CC) -o $@ $^ -g
+
+clean:
+	rm  $(TARGET)

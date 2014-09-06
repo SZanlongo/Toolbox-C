@@ -1,0 +1,23 @@
+CC 		:= gcc
+
+CFLAGS		:= -Wall -g
+CFLAGS_EXE	:= $(CFLAGS) -lpthread
+
+INCLUDES	:= -I.
+
+OBJS		:= client.o server.o
+EXECS		:= client server
+
+all:	$(EXECS)
+
+.c.o:
+	@echo "[CC]\t\t$@" && $(CC) $(INCLUDES) -c $< $(CFLAGS) -o $@
+
+client: client.o
+	@echo "[CC]\t\t$@" && $(CC) $(INCLUDES) $^ $(CFLAGS_EXE) -o $@
+
+server:	server.o
+	@echo "[CC]\t\t$@" && $(CC) $(INCLUDES) $^ $(CFLAGS_EXE) -o $@
+
+clean:
+	@echo "[CLEAN]\t\t$(EXECS) $(OBJS)" && rm -f $(EXECS) $(OBJS)
